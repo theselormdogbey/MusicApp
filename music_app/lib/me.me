@@ -1,0 +1,61 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
+import '../assets.dart';
+
+class CustomAppBar extends StatefulWidget {
+  late double scrollOffset;
+
+  CustomAppBar({
+    Key? key,
+    required this.scrollOffset,
+  }) : super(key: key);
+
+  @override
+  State<CustomAppBar> createState() => _CustomAppBarState();
+}
+
+class _CustomAppBarState extends State<CustomAppBar> {
+  get scrollOffset => null;
+
+  @override
+  Widget build(BuildContext context) {
+    
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 10.0,
+        horizontal: 24.0,
+      ),
+      color: Colors.black.withOpacity((scrollOffset /350).clamp(0,1).toDouble()),
+      child: SafeArea(
+        child: Row(
+          children: [
+            Image.asset(Assets.hama),
+            const SizedBox(width: 12.0),
+            Text('              Welcome, Serlom'),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(width: 30),
+                  GestureDetector(
+                    onTap: () => print('Welcome'),
+                    child: const Icon(Icons.notification_add),
+                  ),
+                  GestureDetector(
+                    onTap: () => print('Welcome'),
+                    child: const Icon(Icons.timelapse),
+                  ),
+                  GestureDetector(
+                    onTap: () => print('Welcome'),
+                    child: const Icon(Icons.settings),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
