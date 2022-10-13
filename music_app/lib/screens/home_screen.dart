@@ -55,15 +55,16 @@ class _HomeScreenState extends State<HomeScreen> {
               const Text(
                 'Good Afternoon, Selorm',
                 style: TextStyle(
-                    fontSize: 24,
-                    fontFamily: 'ProximaSoft',
-                    fontWeight: FontWeight.bold),
+                  fontSize: 24,
+                  fontFamily: 'ProximaSoft',
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               IconButton(
                 onPressed: null,
                 iconSize: 50,
                 icon: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(

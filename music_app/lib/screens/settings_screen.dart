@@ -18,12 +18,12 @@ class _SettingScreenState extends State<SettingScreen> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  Text(
+                  const Text(
                     'Settings',
                     style: TextStyle(
                       fontFamily: 'ProximaSoft',
