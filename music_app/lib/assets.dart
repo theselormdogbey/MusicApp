@@ -23,4 +23,6 @@ class Assets {
   static const String stormzy = '${_images}stormzy.jpg';
   static const String jireh = '${_images}jireh.jpg';
   static const String old = '${_images}old.jpg';
+  static const String google = '${_images}google.png';
+  static const String blend = '${_images}Blend.png';
 }

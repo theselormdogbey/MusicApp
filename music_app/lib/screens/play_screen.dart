@@ -143,11 +143,15 @@ class _PlayScreenState extends State<PlayScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+              padding: const EdgeInsets.only(
+                left: 60.0,
+                right: 60.0,
+                top: 30,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -203,7 +207,7 @@ class _PlayScreenState extends State<PlayScreen> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
@@ -232,7 +236,50 @@ class _PlayScreenState extends State<PlayScreen> {
                   ),
                 ],
               ),
-            )
+            ),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 30,
+                  top: 15,
+                  right: 30,
+                  bottom: 10,
+                ),
+                child: Container(
+                  width: 600,
+                  height: 400,
+                  decoration: const BoxDecoration(
+                    color: white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
+                  ),
+                  child: SizedBox(
+                    height: 12,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 18.0,
+                        top: 24.0,
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          const Text(
+                            'Lyrics',
+                            style: TextStyle(
+                              fontFamily: 'ProximaSoft',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 19,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

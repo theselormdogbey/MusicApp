@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:music_app/data/theme/colors.dart';
 import 'package:music_app/screens/album_screen.dart';
 import 'package:music_app/screens/play_screen.dart';
+import 'package:music_app/screens/screens.dart';
 
 import '../assets.dart';
 import 'music_screen.dart';
@@ -48,30 +47,30 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                       padding: EdgeInsets.only(top: 8),
                     ),
                     Container(
-                      height: 50,
-                      width: 100,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                        color: Colors.white,
-                      ),
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MusicScreen()));
-                        },
-                        child: const Center(
-                          child: (Text(
-                            'Songs',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          )),
+                        height: 50,
+                        width: 100,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                          color: Colors.white,
                         ),
-                      ),
-                    ),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white)),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MusicScreen()));
+                          },
+                          child: const Text(
+                            'Song',
+                            style: TextStyle(
+                              fontFamily: 'ProximaSoft',
+                              color: Colors.black,
+                            ),
+                          ),
+                        )),
                     Container(
                       height: 50,
                       width: 100,
@@ -80,6 +79,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         color: Colors.white,
                       ),
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white)),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -90,8 +92,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                           child: (Text(
                             'Album',
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontFamily: 'ProximaSoft',
+                              color: Colors.black,
                             ),
                           )),
                         ),
@@ -105,6 +107,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         color: Colors.white,
                       ),
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white)),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -116,8 +121,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                           child: (Text(
                             'Playlist',
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontFamily: 'ProximaSoft',
+                              color: Colors.black,
                             ),
                           )),
                         ),
@@ -131,13 +136,21 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         color: Colors.white,
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white)),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()));
+                        },
                         child: const Center(
                           child: (Text(
                             'Podcast',
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontFamily: 'ProximaSoft',
+                              color: Colors.black,
                             ),
                           )),
                         ),
@@ -157,6 +170,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(12.0)),
                 ),
                 child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white)),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -169,8 +185,12 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Gospel',
-                      style:
-                          TextStyle(fontStyle: FontStyle.normal, fontSize: 42),
+                      style: TextStyle(
+                        fontFamily: 'ProximaSoft',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 42,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
@@ -226,8 +246,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                     ),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 180.0),
+                Padding(
+                  padding: const EdgeInsets.only(left: 170.0),
                   child: IconButton(
                       icon: Icon(
                         FeatherIcons.moreVertical,
@@ -296,7 +316,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15.0,
             ),
             Row(
@@ -348,7 +368,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 140.0),
+                  padding: EdgeInsets.only(left: 130.0),
                   child: IconButton(
                       icon: Icon(
                         FeatherIcons.moreVertical,
