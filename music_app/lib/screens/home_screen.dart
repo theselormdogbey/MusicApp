@@ -60,16 +60,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold),
               ),
               IconButton(
-                  onPressed: null,
-                  iconSize: 50,
-                  icon: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      image: DecorationImage(
-                          image: AssetImage(Assets.black), fit: BoxFit.cover),
-                    ),
-                  ))
+                onPressed: null,
+                iconSize: 50,
+                icon: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    image: DecorationImage(
+                        image: AssetImage(Assets.black), fit: BoxFit.cover),
+                  ),
+                ),
+              )
             ],
           ),
         ),

@@ -171,8 +171,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 ),
                 child: ElevatedButton(
                   style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white)),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -246,8 +247,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 170.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 170.0),
                   child: IconButton(
                       icon: Icon(
                         FeatherIcons.moreVertical,

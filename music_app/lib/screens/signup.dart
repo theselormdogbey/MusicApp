@@ -55,8 +55,8 @@ class _SignUp_ScreenState extends State<SignUp_Screen> {
                   Radius.circular(12),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12),
+              child: const Padding(
+                padding: EdgeInsets.only(left: 12),
                 child: TextField(
                   decoration: InputDecoration(
                     border: InputBorder.none,
@@ -66,7 +66,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Padding(
