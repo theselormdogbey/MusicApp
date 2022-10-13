@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/screens/screens.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:music_app/screens/settings_screen.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({Key? key}) : super(key: key);
@@ -23,10 +24,7 @@ class _NavScreenState extends State<NavScreen> {
   Widget getBody() {
     return IndexedStack(
       index: activeTab,
-      children: [
-        HomeScreen(),
-        MusicScreen(),
-      ],
+      children: [HomeScreen(), MusicScreen(), SettingScreen()],
     );
   }
 
