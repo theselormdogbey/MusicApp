@@ -20,7 +20,7 @@ class _PlayScreenState extends State<PlayScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppBar(
-              backgroundColor: Colors.black,
+              backgroundColor: black,
               elevation: 0,
               // ignore: prefer_const_literals_to_create_immutables
               actions: [
