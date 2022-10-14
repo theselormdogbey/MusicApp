@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         controller: _emailController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Username -or- Email',
+                          hintText: 'Username',
                         ),
                       ),
                     ),
