@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           buttonTheme: const ButtonThemeData(
             buttonColor: Colors.white,
           )),
-      home: const LoginScreen(),
+      home: const NavScreen(),
     );
   }
 }
