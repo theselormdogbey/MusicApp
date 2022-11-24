@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:music_app/assets.dart';
@@ -11,7 +12,48 @@ class PlayScreen extends StatefulWidget {
 }
 
 class _PlayScreenState extends State<PlayScreen> {
+  final audioplayer = AudioPlayer();
+  bool isPlaying = true;
+  Duration duration = Duration.zero;
+  Duration position = Duration.zero;
+
   double _currentSliderValue = 20;
+
+  @override
+  void initState() {
+    super.initState();
+
+    audioplayer.onPlayerStateChanged.listen((state) {
+      if (isPlaying) {
+        setState(() {
+          state == PlayerState.playing;
+        });
+      } else {
+        state == PlayerState.paused;
+      }
+    });
+
+    audioplayer.onDurationChanged.listen((newDuration) {
+      setState(() {
+        duration = newDuration;
+      });
+    });
+
+    audioplayer.onPositionChanged.listen((newPosition) {
+      position = newPosition;
+    });
+  }
+
+  Future setAudio() async {
+    audioplayer.setReleaseMode(ReleaseMode.loop);
+  }
+
+  @override
+  void dispose() {
+    audioplayer.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,13 +148,17 @@ class _PlayScreenState extends State<PlayScreen> {
                   const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               child: Slider(
                 activeColor: primary,
-                value: _currentSliderValue,
+                value: position.inSeconds.toDouble(),
                 min: 0,
-                max: 150,
+                max: duration.inSeconds.toDouble(),
                 onChanged: (value) {
-                  setState(() {
-                    _currentSliderValue = value;
-                  });
+                  final position = Duration(seconds: value.toInt());
+                  audioplayer.seek(position);
+                  audioplayer.resume();
+                  /* if ((duration.inSeconds - position.inSeconds) == 0) {
+                    audioplayer.stop();
+                    isPlaying = false;
+                  }*/
                 },
               ),
             ),
@@ -129,13 +175,13 @@ class _PlayScreenState extends State<PlayScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '1:50',
+                    formatTime(position),
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontFamily: 'ProximaSoft'),
                   ),
                   Text(
-                    '5:00',
+                    formatTime(duration - position),
                     style: TextStyle(
                         color: Colors.white.withOpacity(0.5),
                         fontFamily: 'ProximaSoft'),
@@ -163,6 +209,8 @@ class _PlayScreenState extends State<PlayScreen> {
                       size: 25,
                     ),
                   ),
+
+                  //Skipback buttom
                   IconButton(
                     onPressed: null,
                     icon: Icon(
@@ -171,23 +219,29 @@ class _PlayScreenState extends State<PlayScreen> {
                       size: 25,
                     ),
                   ),
-                  IconButton(
-                    onPressed: null,
-                    iconSize: 60,
-                    icon: Container(
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: primary,
+
+                  CircleAvatar(
+                    radius: 35,
+                    child: IconButton(
+                      icon: Icon(
+                        isPlaying == false ? Icons.pause : Icons.play_arrow,
                       ),
-                      child: const Center(
-                        child: Icon(
-                          FeatherIcons.play,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                      ),
+                      iconSize: 50,
+                      onPressed: () async {
+                        setState(() {
+                          isPlaying = !isPlaying;
+                        });
+                        if (isPlaying) {
+                          await audioplayer.pause();
+                        } else {
+                          String url =
+                              'https://firebasestorage.googleapis.com/v0/b/musicapp-5143b.appspot.com/o/Songs%2FDave_-_Starlight.mp3?alt=media&token=b9c6558e-5038-4371-9466-fb991a2fe98c';
+                          await audioplayer.play(UrlSource(url));
+                        }
+                      },
                     ),
                   ),
+                  // Skipforward buttom
                   IconButton(
                     onPressed: null,
                     icon: Icon(
@@ -196,6 +250,8 @@ class _PlayScreenState extends State<PlayScreen> {
                       size: 20,
                     ),
                   ),
+
+                  //Repeat buttom
                   IconButton(
                     onPressed: null,
                     icon: Icon(
@@ -284,5 +340,18 @@ class _PlayScreenState extends State<PlayScreen> {
         ),
       ),
     );
+  }
+
+  String formatTime(Duration duration) {
+    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    final hours = twoDigits(duration.inHours);
+    final minutes = twoDigits(duration.inMinutes.remainder(60));
+    final seconds = twoDigits(duration.inSeconds.remainder(60));
+
+    return [
+      if (duration.inHours > 0) hours,
+      minutes,
+      seconds,
+    ].join(':');
   }
 }

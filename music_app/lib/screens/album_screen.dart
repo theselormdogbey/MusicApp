@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:music_app/screens/music_screen.dart';
-import 'package:music_app/screens/nav_screen.dart';
 import 'package:music_app/screens/screens.dart';
 import '../assets.dart';
-import '../screens/home_screen.dart';
 
 class AlbumScreen extends StatefulWidget {
   const AlbumScreen({Key? key}) : super(key: key);
