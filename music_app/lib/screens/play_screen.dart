@@ -25,18 +25,22 @@ class _PlayScreenState extends State<PlayScreen> {
 
     audioplayer.onPlayerStateChanged.listen((state) {
       if (isPlaying) {
-        setState(() {
-          state == PlayerState.playing;
-        });
+        if (mounted) {
+          setState(() {
+            state == PlayerState.playing;
+          });
+        }
       } else {
         state == PlayerState.paused;
       }
     });
 
     audioplayer.onDurationChanged.listen((newDuration) {
-      setState(() {
-        duration = newDuration;
-      });
+      if (mounted) {
+        setState(() {
+          duration = newDuration;
+        });
+      }
     });
 
     audioplayer.onPositionChanged.listen((newPosition) {
