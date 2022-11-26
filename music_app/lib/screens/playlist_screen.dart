@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:music_app/data/theme/colors.dart';
-import 'package:music_app/screens/album_screen.dart';
-import 'package:music_app/screens/play_screen.dart';
 import 'package:music_app/screens/screens.dart';
 
 import '../assets.dart';
-import 'music_screen.dart';
 
 class PlaylistScreen extends StatefulWidget {
   const PlaylistScreen({Key? key}) : super(key: key);
@@ -24,6 +20,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            //Search Bar
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: Center(
@@ -37,6 +34,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 ),
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: SingleChildScrollView(
@@ -46,6 +44,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                     const Padding(
                       padding: EdgeInsets.only(top: 8),
                     ),
+
+                    //Song Buttom
                     Container(
                         height: 50,
                         width: 100,
@@ -71,6 +71,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                             ),
                           ),
                         )),
+
+                    //Ablum Buttom
                     Container(
                       height: 50,
                       width: 100,
@@ -99,6 +101,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         ),
                       ),
                     ),
+
+                    //Playlist Buttom
                     Container(
                       height: 50,
                       width: 100,
@@ -128,6 +132,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         ),
                       ),
                     ),
+
+                    //Podcast buttom
                     Container(
                       height: 50,
                       width: 100,
@@ -160,224 +166,245 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            //Gospel Playlist
             Padding(
-              padding: const EdgeInsets.fromLTRB(25, 25, 25, 15),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: 120,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                ),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PlayScreen(),
-                      ),
-                    );
-                  },
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      'Gospel',
-                      style: TextStyle(
-                        fontFamily: 'ProximaSoft',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 42,
-                        color: Colors.black,
-                      ),
-                    ),
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
+                subtitle: const Text(
+                  'Created by Black Seal',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
+                ),
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
               ),
             ),
-            SizedBox(
-              height: 15,
+
+            //Gh Hiphop Playlist
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('GH Hip Hop'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Created by Black Seal',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
+                ),
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 25.0),
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15.0),
-                      ),
-                      color: white,
-                      image: DecorationImage(
-                          image: AssetImage(Assets.mog), fit: BoxFit.cover),
-                    ),
+
+            //Afternoon Drive
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Afternoon Drive'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Text(
-                          'My Gospel',
-                          style: TextStyle(
-                            fontFamily: 'ProximaSoft',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            color: white,
-                          ),
-                        ),
-                        // ignore: prefer_const_constructors
-                        Text(
-                          'Playlist by Selorm',
-                          style: const TextStyle(
-                            fontFamily: 'ProximaSoft',
-                            fontSize: 12,
-                            color: white,
-                          ),
-                        ),
-                      ],
-                    ),
+                subtitle: const Text(
+                  'Created by Black Seal',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 170.0),
-                  child: IconButton(
-                      icon: Icon(
-                        FeatherIcons.moreVertical,
-                        color: Colors.white,
-                      ),
-                      onPressed: null),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
                 ),
-              ],
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
             ),
-            const SizedBox(
-              height: 15,
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Local & International',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
+                ),
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 25.0),
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: const BoxDecoration(
-                        color: white,
-                        image: DecorationImage(
-                            image: AssetImage(Assets.starlight),
-                            fit: BoxFit.cover),
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Text(
-                          'Afternoon Drive',
-                          style: TextStyle(
-                            fontFamily: 'ProximaSoft',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            color: white,
-                          ),
-                        ),
-                        // ignore: prefer_const_constructors
-                        Text(
-                          'Playlist by Selorm',
-                          style: const TextStyle(
-                            fontFamily: 'ProximaSoft',
-                            fontSize: 12,
-                            color: white,
-                          ),
-                        ),
-                      ],
-                    ),
+                subtitle: const Text(
+                  'Local & International',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 120.0),
-                  child: IconButton(
-                      icon: Icon(
-                        FeatherIcons.moreVertical,
-                        color: Colors.white,
-                      ),
-                      onPressed: null),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
                 ),
-              ],
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
             ),
-            const SizedBox(
-              height: 15.0,
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Local & International',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
+                ),
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 25.0),
-                  child: Container(
-                    height: 100,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(15.0),
-                      ),
-                      color: white,
-                      image: DecorationImage(
-                          image: AssetImage(Assets.damn), fit: BoxFit.cover),
-                    ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Text(
-                          'Hip Hop Track',
-                          style: TextStyle(
-                            fontFamily: 'ProximaSoft',
-                            fontWeight: FontWeight.bold,
-                            fontSize: 24,
-                            color: white,
-                          ),
-                        ),
-                        // ignore: prefer_const_constructors
-                        Text(
-                          'Playlist by Selorm',
-                          style: const TextStyle(
-                            fontFamily: 'ProximaSoft',
-                            fontSize: 12,
-                            color: white,
-                          ),
-                        ),
-                      ],
-                    ),
+                subtitle: const Text(
+                  'Local & International',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 130.0),
-                  child: IconButton(
-                      icon: Icon(
-                        FeatherIcons.moreVertical,
-                        color: Colors.white,
-                      ),
-                      onPressed: null),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
                 ),
-              ],
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Local & International',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
+                ),
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: ListTile(
+                title: const Text(
+                  ('Gospel'),
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: const Text(
+                  'Local & International',
+                  style: TextStyle(
+                    fontFamily: 'ProximaSoft',
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_right,
+                ),
+                // ignore: avoid_returning_null_for_void
+                onTap: () => null,
+                textColor: white,
+              ),
             ),
           ],
         ),
