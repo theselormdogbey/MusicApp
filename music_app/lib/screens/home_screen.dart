@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/data/theme/colors.dart';
-
 import '../assets.dart';
 import '../data/data.dart';
 import '../widgets/content_header.dart';

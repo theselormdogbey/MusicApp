@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:music_app/main_page.dart';
 import 'package:music_app/screens/loginscreen.dart';
 import 'package:music_app/screens/nav_screen.dart';
-
 import 'firebase_options.dart';
 
 Future<void> main() async {

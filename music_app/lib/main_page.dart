@@ -15,7 +15,7 @@ class MainPage extends StatelessWidget {
             if (snapshot.hasData) {
               return const NavScreen();
             } else {
-              return const LoginScreen();
+              return const NavScreen();
             }
           }),
     );

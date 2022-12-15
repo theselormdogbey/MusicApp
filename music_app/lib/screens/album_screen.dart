@@ -18,18 +18,19 @@ class _AlbumScreenState extends State<AlbumScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(30),
+            const Padding(
+              padding: EdgeInsets.all(30),
             ),
 
+            //Search Bar
             Center(
               child: Container(
                 height: 50,
                 width: 400,
-                child: CupertinoSearchTextField(),
                 decoration: BoxDecoration(
                   color: Colors.transparent,
                 ),
+                child: const CupertinoSearchTextField(),
               ),
             ),
             // ignore: prefer_const_constructors

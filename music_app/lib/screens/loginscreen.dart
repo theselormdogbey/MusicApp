@@ -1,9 +1,6 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:music_app/data/theme/colors.dart';
-import 'package:music_app/screens/LoginScreen.dart';
 import 'package:music_app/screens/forgotten_screen.dart';
-import 'package:music_app/screens/home_screen.dart';
 import 'package:music_app/screens/nav_screen.dart';
 import 'package:music_app/screens/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -64,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.only(left: 12),
                       child: TextField(
                         controller: _emailController,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Username',
                         ),
@@ -72,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Padding(

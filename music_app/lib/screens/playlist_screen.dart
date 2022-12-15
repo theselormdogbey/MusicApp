@@ -20,17 +20,18 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const Padding(
+              padding: EdgeInsets.all(30),
+            ),
+
             //Search Bar
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Center(
-                child: Container(
-                  width: 400,
-                  height: 50,
-                  child: CupertinoSearchTextField(),
-                  decoration: const BoxDecoration(
-                    color: Colors.transparent,
-                  ),
+            Center(
+              child: Container(
+                width: 400,
+                height: 50,
+                child: const CupertinoSearchTextField(),
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
                 ),
               ),
             ),
@@ -194,6 +195,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -221,6 +223,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -248,6 +251,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -274,6 +278,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -300,6 +305,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -326,6 +332,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -352,6 +359,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -378,6 +386,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
 
@@ -404,6 +413,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 // ignore: avoid_returning_null_for_void
                 onTap: () => null,
                 textColor: white,
+                iconColor: white,
               ),
             ),
           ],

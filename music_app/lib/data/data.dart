@@ -71,7 +71,7 @@ final List<Content> previews = const [
 final List<Content> myList = const [
   Content(
       name: 'Selorm',
-      imageUrl: Assets.black,
+      imageUrl: Assets.cole,
       videoUrl: '',
       description: '',
       color: Colors.green),
@@ -104,25 +104,25 @@ final List<Content> myList = const [
 final List<Content> originals = const [
   Content(
       name: 'Selorm',
-      imageUrl: Assets.black,
+      imageUrl: Assets.mog,
       videoUrl: '',
       description: '',
       color: Colors.green),
   Content(
       name: 'Cecil',
-      imageUrl: Assets.hama,
+      imageUrl: Assets.everything,
       videoUrl: '',
       description: '',
       color: Colors.green),
   Content(
       name: 'Prince',
-      imageUrl: Assets.kia,
+      imageUrl: Assets.eminem,
       videoUrl: '',
       description: '',
       color: Colors.green),
   Content(
       name: 'Jed',
-      imageUrl: Assets.brown,
+      imageUrl: Assets.jireh,
       videoUrl: '',
       description: '',
       color: Colors.green),
@@ -137,25 +137,25 @@ final List<Content> originals = const [
 final List<Content> songs = const [
   Content(
       name: 'Selorm',
-      imageUrl: Assets.black,
+      imageUrl: Assets.starlight,
       videoUrl: '',
       description: '',
       color: Colors.green),
   Content(
       name: 'Cecil',
-      imageUrl: Assets.hama,
+      imageUrl: Assets.santan,
       videoUrl: '',
       description: '',
       color: Colors.green),
   Content(
       name: 'Prince',
-      imageUrl: Assets.kia,
+      imageUrl: Assets.stormzy,
       videoUrl: '',
       description: '',
       color: Colors.green),
   Content(
       name: 'Jed',
-      imageUrl: Assets.brown,
+      imageUrl: Assets.maverick,
       videoUrl: '',
       description: '',
       color: Colors.green),
